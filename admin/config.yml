@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: ユーザー名/リポジトリ名  # 例: kzysnmr/nk.github.io
+  branch: main
+
+media_folder: "assets/images" # 画像を保存する場所
+public_folder: "/assets/images"
+
+collections:
+  - name: "blog"
+    label: "ブログ記事"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "レイアウト", name: "layout", widget: "hidden", default: "post"}
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "日付", name: "date", widget: "datetime"}
+      - {label: "本文", name: "body", widget: "markdown"}
